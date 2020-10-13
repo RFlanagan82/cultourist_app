@@ -30,9 +30,9 @@ app.use(express.static("public"));
 //=============================================================
 
 //HTML Routes
-app.get("/", (req, res) => {
-    res.render("index");
-  });
+// app.get("/", (req, res) => {
+//     res.render("index");
+//   });
 
 // API ROUTES
 // app.get("/api/config", (req, res) => {
