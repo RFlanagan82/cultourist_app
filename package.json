@@ -1,0 +1,29 @@
+{
+  "name": "cultourist_app",
+  "version": "1.0.0",
+  "description": "Create an application that takes in user comments about the culture, scams, slang, and nuances of a particular country they’ve visited to help other future travellers who are planning to go there.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RFlanagan82/cultourist_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RFlanagan82/cultourist_app/issues"
+  },
+  "homepage": "https://github.com/RFlanagan82/cultourist_app#readme",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "handlebars": "^4.7.6",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
