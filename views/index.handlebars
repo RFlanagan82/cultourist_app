@@ -1,5 +1,5 @@
 <nav>
-    <div class="nav-wrapper blue-grey darken-2">
+    <div class="nav-wrapper deep-orange lighten-1">
         <a href="#" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="">Manage Posts</a></li>
@@ -7,5 +7,24 @@
         </ul>
     </div>
 </nav>
-<div class="container">
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>CulTourist</h1>
+    </div>
+</div>
+<div class="container center-align">
+    <div class="row">
+        <h2 class="center-align">Know before you go!</h2>
+        <div class="input-field col s4 offset-s4">
+            <select>
+                <option value="" disabled selected>Choose your option</option>
+                {{!-- THESE WILL EVENTUALLY BE REPLACED WITH PARTIALS WITH COUNTRIES GENERATED FROM THE DATABASE --}}
+                {{> countrydb-list}}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <h3 class="center-align">Been there... share your experience!</h3>
+        <a class="waves-effect waves-light btn-large blue darken-4">Write Post</a>
+    </div>
 </div>
