@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING,
       },
       body: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.STRING,
       },
       category: {
           type: DataTypes.STRING
