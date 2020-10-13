@@ -1,8 +1,17 @@
 module.exports = function (sequelize, DataTypes) {
-    const Countries = sequelize.define("Countries", {
+    const Country = sequelize.define("Country", {
       name: {
         type: DataTypes.STRING,
       },
     });
-    return Countries;
+
+    Country.associate = function(models) {
+      // Associating Author with Posts
+      // When an Author is deleted, also delete any associated Posts
+      Country.hasMany(models.Post, {
+        onDelete: "cascade"
+      });
+    };
+    
+    return Country;
   };
