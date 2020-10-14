@@ -8,7 +8,7 @@ const models = require("../models/");
 module.exports = (app) => {
   app.get("/", (req, res) => {
     db.Country.findAll().then((data) => {
-      console.log(data);
+      // console.log(data);
       res.render("index", { countries: data });
     });
     // res.render("index");
