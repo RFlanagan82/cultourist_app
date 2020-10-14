@@ -15,15 +15,18 @@
 <div class="container center-align">
     <div class="row">
         <h2 class="center-align">Know before you go!</h2>
-        <div class="input-field col s4 offset-s4">
-            <select>
-                <option value="" disabled selected>Choose your option</option>
-                {{!-- NEED TO CREATE BACKEND CODE TO RENDER THE LIST OF COUNTRIES --}}
+        <div class="col s4 offset-s4" <!-- Dropdown Trigger -->
+            <a class='dropdown-trigger btn btn-large blue darken-4' href='#' data-target='dropdown1'>Choose a
+                country!</a>
+
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
                 {{#each countries}}
-                <option value="{{this.id}}">{{this.name}}</option>
+                <li><a href="/post/{{this.id}}">{{this.name}}</a></li>
                 {{/each}}
-            </select>
+            </ul>
         </div>
+
     </div>
     <div class="row">
         <h3 class="center-align">Been there... share your experience!</h3>
