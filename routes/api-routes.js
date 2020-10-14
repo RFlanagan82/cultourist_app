@@ -147,4 +147,18 @@ module.exports = (app) => {
   app.post("/manage",(req,res) => {
     console.log(req.body);
   })
+
+  app.get("/manage/user/:id", (req,res) => {
+    console.log(req.body);
+    db.Post.findAll({
+      where: {
+        UserId: req.body.userID
+      }
+    }).then((data) => {
+      res.render("manage", {
+        post: data
+      });
+    });
+  });
 };
+

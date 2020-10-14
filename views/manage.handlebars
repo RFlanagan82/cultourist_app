@@ -6,24 +6,17 @@
 
 <div class="container center-align">
     <div class="row">
-        <form class="col s12" method="post" action="/manage">
-            <h2>Manage Your Posts</h2>
-            <div class="row">
-                <div class="input-field col s12">
-                    <select name="fullName">
-                        <option value="" disabled selected>Select your name</option>
-                        <option value="AuthorTest">TEST AUTHOR</option>
-                        {{#each users}}
-                            <option value="{{this.id}}">
-                                {{this.full_name}}
-                            </option>
-                        {{/each}}
-                    </select>
-                </div>
-                <button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Submit
-                </button>
-            </div>
-        </form>
+        <div class="col s4 offset-s4">
+            <!-- Dropdown Trigger -->
+            <a class='dropdown-trigger btn btn-large blue darken-4' href='#' data-target='dropdown1'>Select your name!</a>
+
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+                {{#each users}}
+                <li><a href="/manage/user/{{this.id}}">{{this.full_name}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
     </div>
 
 
