@@ -7,7 +7,7 @@ let languageNative = ""
 let nameNative = ""
 let population = ""
 let domain = ""
-let country = "germany"
+let country = "china"
 
 
 $(document).ready(function () {
