@@ -62,10 +62,8 @@ const countryList = [
 module.exports = (app) => {
   app.get("/", (req, res) => {
     db.Country.findAll().then((data) => {
-      // console.log(data);
       res.render("index", { countries: data });
     });
-    // res.render("index");
   });
 
   app.get("/country", (req, res) => {
@@ -83,6 +81,5 @@ module.exports = (app) => {
         userNames: data
       })
     })
-    // res.render("post");
   });
 };
