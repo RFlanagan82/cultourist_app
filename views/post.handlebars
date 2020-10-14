@@ -9,24 +9,30 @@
             <h2>Create New Post</h2>
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Enter Your Name" id="name" type="text" class="validate">
-                    <label for="name">Name</label>
+                    <select id="name">
+                        <option value="" disabled selected>Choose a User Name</option>
+                        {{#each userNames}}
+                        <option value="{{this.id}}">{{this.full_name}}</option>
+                        {{/each}}
+                    </select>
+                    <label>Choose a User Name</label>
                 </div>
                 <div class="input-field col s12">
-                    <select>
+                    <select id="country">
                         <option value="" disabled selected>Choose a Country</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        {{#each countryList}}
+                        <option value="{{this}}">{{this}}</option>
+                        {{/each}}
                     </select>
                     <label>Choose a Country</label>
                 </div>
                 <div class="input-field col s12">
-                    <select>
+                    <select id="category">
                         <option value="" disabled selected>Choose a Category</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <option value="Customs">Customs</option>
+                        <option value="Slang">Slang</option>
+                        <option value="Taboos">Taboos</option>
+                        <option value="Scam">Scam</option>
                     </select>
                     <label>Choose a Category</label>
                 </div>
