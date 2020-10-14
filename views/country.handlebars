@@ -1,1 +1,37 @@
-<h1>Country</h1>
+<div class="container center-align">
+    <div class="row">
+        <div class="col s12">
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content left-align">
+                        <h3 class="header">{{countryData.countryName}}</h3>
+                        <p>Capital City: {{countryData.capital}}</p>
+                        <p>Language: {{countryData.language}}</p>
+                        <p>Currency: {{countryData.currency}} {{countryData.currencySymbol}}</p>
+                        <p>Population: {{countryData.population}}</p>
+                    </div>
+                </div>
+                <div class="card-image">
+                    <img src="{{countryData.flag}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{#each post}}
+        <div class="row">
+        <div class="col s12">
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content left-align">
+                        <h5>{{title}}</h5>
+                        <p>{{body}}</p>
+                        <p>Category: {{category}}</p>
+                        <p>Posted by: {{userName}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<script src="/assets/index.js"></script>
