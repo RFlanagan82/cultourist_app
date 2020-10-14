@@ -149,10 +149,10 @@ module.exports = (app) => {
   })
 
   app.get("/manage/user/:id", (req,res) => {
-    console.log(req.body);
+    console.log("hello");
     db.Post.findAll({
       where: {
-        UserId: req.body.userID
+        UserId: req.params.id
       }
     }).then((data) => {
       res.render("manage", {
