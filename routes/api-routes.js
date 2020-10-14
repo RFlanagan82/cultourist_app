@@ -71,7 +71,12 @@ module.exports = (app) => {
   });
 
   app.get("/manage", (req, res) => {
-    res.render("manage");
+    console.log(req.body);
+    db.User.findAll().then((data)=>{
+      res.render("manage", {
+        users: data
+      })
+    })
   });
 
   app.get("/post", (req, res) => {
@@ -82,4 +87,8 @@ module.exports = (app) => {
       })
     })
   });
+
+  app.post("/manage",(req,res) => {
+    console.log(req.body);
+  })
 };
