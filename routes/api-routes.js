@@ -72,6 +72,7 @@ module.exports = (app) => {
       where: { name: req.params.name },
     }).then(function ({ id }) {
       db.Post.findAll({
+        include: db.User,
         where: { CountryId: id },
       }).then((postData) => {
         let capital = "";

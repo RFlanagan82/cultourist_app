@@ -1,3 +1,13 @@
+.brand-logo {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.cultourist {
+  font-size: 36px;
+  margin-left: 50px;
+}
+
 /* Dropdown Button */
 .dropbtn {
     background-color: #4CAF50;
