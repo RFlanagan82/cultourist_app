@@ -20,9 +20,9 @@ $(document).ready(function () {
     $.ajax({
       method: "DELETE",
       url: "/api/post/" + id
-    })
-    .then(function(results) {
+    }).then(function(results) {
       console.log(results)
+      console.log("test")
       location.reload();
     })
   })

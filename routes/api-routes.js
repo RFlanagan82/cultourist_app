@@ -175,7 +175,8 @@ module.exports = (app) => {
       where: {
         id: req.params.id
       }
-    }).then(function(dbPost) {
+    })
+    .then(function(dbPost) {
       res.json(dbPost)
       location.reload();
     });
