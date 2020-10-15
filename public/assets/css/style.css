@@ -1,3 +1,10 @@
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+}
+
 .brand-logo {
   margin-top: 5px;
   margin-left: 10px;
