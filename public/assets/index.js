@@ -12,3 +12,19 @@ $(document).ready(function () {
     });
   });
 });
+
+
+// if(User.numOfPosts < 5){
+//   badge = "re"
+// } else if (User.numOfPosts >= 5 && User.numOfPosts < 10){
+//   badge = "ree"
+// }else if (User.numOfPosts >= 10 && User.numOfPosts < 25){
+//   badge = "reee"
+// }else if (User.numOfPosts >= 25){
+//   badge = "reeee"
+// }
+
+
+
+
+

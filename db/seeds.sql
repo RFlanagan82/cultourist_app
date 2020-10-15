@@ -16,8 +16,8 @@ INSERT INTO Posts(title, body, category, createdAt, updatedAt, CountryId, UserId
 
 
 INSERT INTO users (full_name, numOfPosts,createdAt,updatedAt) VALUES ("Dane Walsh", 2, NOW(), NOW());
-INSERT INTO users (full_name, numOfPosts,createdAt,updatedAt) VALUES ("Batman Wayne", 2, NOW(), NOW());
-INSERT INTO users (full_name, numOfPosts,createdAt,updatedAt) VALUES ("Robin Grayson", 3, NOW(), NOW());
+INSERT INTO users (full_name, numOfPosts,createdAt,updatedAt) VALUES ("Batman Wayne", 3, NOW(), NOW());
+INSERT INTO users (full_name, numOfPosts,createdAt,updatedAt) VALUES ("Robin Grayson", 6, NOW(), NOW());
 
 
 SELECT * FROM culTourist_db.Users;
