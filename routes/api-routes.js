@@ -160,5 +160,15 @@ module.exports = (app) => {
       });
     });
   });
+
+  app.post("/api/create-user", (req, res) => {
+    db.User.create({
+      full_name: req.body.full_name
+    }).then((results) => {
+      res.json(results)
+      location.reload();
+    })
+    
+  })
 };
 
