@@ -170,7 +170,6 @@ module.exports = (app) => {
       numOfPosts: 0
     }).then((results) => {
       res.json(results);
-      location.reload();
     });
   });
 
@@ -212,7 +211,6 @@ module.exports = (app) => {
           },
         }).then(function (dbPost) {
           res.json(dbPost);
-          location.reload();
         })
         .catch(err => console.log(err))
       })
