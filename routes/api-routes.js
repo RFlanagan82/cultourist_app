@@ -3,6 +3,7 @@ const db = require("../models/");
 const app = express();
 const models = require("../models/");
 const axios = require("axios");
+const { sequelize } = require("../models/");
 
 const countryList = [
   "Albania",
@@ -166,6 +167,7 @@ module.exports = (app) => {
   app.post("/api/create-user", (req, res) => {
     db.User.create({
       full_name: req.body.full_name,
+      numOfPosts: 0
     }).then((results) => {
       res.json(results);
       location.reload();
@@ -173,26 +175,49 @@ module.exports = (app) => {
   });
 
   app.post("/api/newpost", (req, res) => {
+    console.log("Hit this route")
     console.log(req.body);
-    db.Post.create({
-      title: req.body.title,
-      body: req.body.body,
-      category: req.body.category,
-      CountryId: req.body.CountryId,
-      UserId: req.body.UserId,
-    }).then((results) => {
-      res.json(results);
-    });
+    db.User.findByPk(parseInt(req.body.UserId))
+    .then(user => {
+      console.log(user)
+      user.increment({numOfPosts: 1}, {where: {id: parseInt(req.body.UserId)
+      }}).then(() => {
+        db.Post.create({
+          title: req.body.title,
+          body: req.body.body,
+          category: req.body.category,
+          CountryId: req.body.CountryId,
+          UserId: user.id
+        }).then((results) => {
+          res.json(results);
+        })
+        .catch(err => console.log(err))
+      })
+      .catch(err => console.log(err))
+    })
+    .catch(err => console.log(err))
   });
 
   app.delete("/api/post/:id", (req, res) => {
-    db.Post.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then(function (dbPost) {
-      res.json(dbPost);
-      location.reload();
-    });
+    db.Post.findOne({
+      id:req.params.id
+    }).then(post => {
+      db.User.decrement(
+        ['numOfPosts', '1'],
+        {where: {id: post.UserId}}
+      ).then(() => {
+        db.Post.destroy({
+          where: {
+            id: req.params.id,
+          },
+        }).then(function (dbPost) {
+          res.json(dbPost);
+          location.reload();
+        })
+        .catch(err => console.log(err))
+      })
+      .catch(err => console.log(err))
+    })
+    .catch(err => console.log(err))
   });
 };
