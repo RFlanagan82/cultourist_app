@@ -167,8 +167,21 @@ module.exports = (app) => {
     }).then((results) => {
       res.json(results)
       location.reload();
-    })
-    
-  })
+    });
+  });
+
+  app.delete("/api/post/:id", (req,res) => {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPost) {
+      res.json(dbPost)
+      location.reload();
+    });
+  });
+
+
+
 };
 

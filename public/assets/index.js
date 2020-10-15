@@ -11,6 +11,21 @@ $(document).ready(function () {
       location.reload();
     });
   });
+
+  $("#deleteBtn").on("click", function(event) {
+    event.preventDefault();
+    //console.log("clicked me", this)
+    let id = $(this).attr("data-id")
+    //console.log($(this).parent());
+    $.ajax({
+      method: "DELETE",
+      url: "/api/post/" + id
+    })
+    .then(function(results) {
+      console.log(results)
+      location.reload();
+    })
+  })
 });
 
 
