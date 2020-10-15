@@ -144,7 +144,7 @@ module.exports = (app) => {
     });
   });
 
-  app.post("/manage",(req,res) => {
+  app.put("/manage",(req,res) => {
     console.log(req.body);
   })
 
