@@ -128,60 +128,71 @@ module.exports = (app) => {
 
   app.get("/manage", (req, res) => {
     console.log(req.body);
-    db.User.findAll().then((data)=>{
+    db.User.findAll().then((data) => {
       res.render("manage", {
-        users: data
-      })
-    })
+        users: data,
+      });
+    });
   });
 
   app.get("/post", (req, res) => {
-    db.User.findAll().then((data) => {
-      res.render("post", {
-        countryList: countryList,
-        userNames: data,
+    db.User.findAll().then((users) => {
+      db.Country.findAll().then((countries) => {
+        res.render("post", {
+          countryList: countries,
+          userNames: users,
+        });
       });
     });
   });
 
   app.put("/manage",(req,res) => {
     console.log(req.body);
-  })
+  });
 
-  app.get("/manage/user/:id", (req,res) => {
+  app.get("/manage/user/:id", (req, res) => {
     console.log("hello");
     db.Post.findAll({
       where: {
-        UserId: req.params.id
-      }
+        UserId: req.params.id,
+      },
     }).then((data) => {
       res.render("manage", {
-        post: data
+        post: data,
       });
     });
   });
 
   app.post("/api/create-user", (req, res) => {
     db.User.create({
-      full_name: req.body.full_name
+      full_name: req.body.full_name,
     }).then((results) => {
-      res.json(results)
+      res.json(results);
       location.reload();
     });
   });
 
-  app.delete("/api/post/:id", (req,res) => {
+  app.post("/api/newpost", (req, res) => {
+    console.log(req.body);
+    db.Post.create({
+      title: req.body.title,
+      body: req.body.body,
+      category: req.body.category,
+      CountryId: req.body.CountryId,
+      UserId: req.body.UserId,
+    }).then((results) => {
+      res.json(results);
+    });
+  });
+
+  app.delete("/api/post/:id", (req, res) => {
     db.Post.destroy({
       where: {
-        id: req.params.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost)
+        id: req.params.id,
+      },
+    }).then(function (dbPost) {
+      res.json(dbPost);
       location.reload();
     });
   });
-
-
-
 };
-

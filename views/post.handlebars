@@ -14,7 +14,7 @@
         </form>
     </div>
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" id="post-id">
             <h2>Create New Post</h2>
             <div class="row">
                 <div class="input-field col s12">
@@ -30,7 +30,7 @@
                     <select id="country">
                         <option value="" disabled selected>Choose a Country</option>
                         {{#each countryList}}
-                        <option value="{{this}}">{{this}}</option>
+                        <option value="{{this.id}}">{{this.name}}</option>
                         {{/each}}
                     </select>
                     <label>Choose a Country</label>
@@ -53,7 +53,7 @@
                     <input placeholder="Enter your insight." id="body" type="text" class="validate">
                     <label for="body">Travel Insight</label>
                 </div>
-                <button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Post
+                <button class="btn waves-effect waves-light blue darken-4" type="submit">Post
                 </button>
             </div>
         </form>
