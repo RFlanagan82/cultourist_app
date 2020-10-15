@@ -27,20 +27,34 @@
                         <h5>{{title}}</h5>
                         <p>{{body}}</p>
                         <p>Category: {{category}}</p>
-                        <p>Posted by: {{User.full_name}} {{User.numOfPosts}}
-                            {{#compare User.numOfPosts '>' 25}}
-                                {{#compare User.numOfPosts '<=' 100}}
-                                <p>greater than 5</p>
+                        <p>Posted by: {{User.full_name}} </p>
+                        <p>
+                            {{#compare User.numOfPosts '<' 5}}
+                                <img src="/assets/images/turtle.png" alt="Turle Badge"
+                                height="50" width="50">
                                 {{else}}
-                                <p>less than 100</p>
-                                {{/compare}}
-                                {{else}}
-                                <p>who cares</p>
+                                    {{#compare User.numOfPosts '<' 10}}
+                                        <img src="/assets/images/moose.png" alt="Moose Badge"
+                                        height="50" width="50">
+                                         {{else}}
+                                            {{#compare User.numOfPosts '<' 25}}
+                                                <img src="/assets/images/muffin.png" alt="Muffin Badge"
+                                                height="50" width="50">
+                                                {{else}}
+                                                    {{#compare User.numOfPosts '>=' 25}}
+                                                        <img src="/assets/images/saddle.png" alt="Saddle Badge"
+                                                        height="50" width="50">
+                                                {{/compare}}
+                                            {{/compare}}
+                                    {{/compare}}
+                                
                             {{/compare}}
+                        </p>
+                            
                             
                                  
                             
-                        </p>
+                        
                     </div>
                 </div>
             </div>
