@@ -18,6 +18,7 @@
         </div>
     </div>
     {{#each post}}
+    
         <div class="row">
         <div class="col s12">
             <div class="card horizontal">
@@ -26,7 +27,20 @@
                         <h5>{{title}}</h5>
                         <p>{{body}}</p>
                         <p>Category: {{category}}</p>
-                        <p>Posted by: {{User.full_name}} {{User.numOfPosts}}</p>
+                        <p>Posted by: {{User.full_name}} {{User.numOfPosts}}
+                            {{#compare User.numOfPosts '>' 25}}
+                                {{#compare User.numOfPosts '<=' 100}}
+                                <p>greater than 5</p>
+                                {{else}}
+                                <p>less than 100</p>
+                                {{/compare}}
+                                {{else}}
+                                <p>who cares</p>
+                            {{/compare}}
+                            
+                                 
+                            
+                        </p>
                     </div>
                 </div>
             </div>
@@ -35,3 +49,5 @@
     {{/each}}
 </div>
 <script src="/assets/index.js"></script>
+
+

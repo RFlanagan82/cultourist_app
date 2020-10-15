@@ -2,10 +2,13 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
+
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 const db = require("./models");
+
+
 
 const PORT = process.env.PORT || 8080;
 
@@ -19,6 +22,31 @@ app.engine(
   exphbs({
     defaultLayout: "main",
     handlebars: allowInsecurePrototypeAccess(handlebars),
+    helpers: {
+      compare: function (v1, operator, v2, options) {
+        'use strict';
+        var operators = {
+          '==': v1 == v2 ? true : false,
+          '===': v1 === v2 ? true : false,
+          '!=': v1 != v2 ? true : false,
+          '!==': v1 !== v2 ? true : false,
+          '>': v1 > v2 ? true : false,
+          '>=': v1 >= v2 ? true : false,
+          '<': v1 < v2 ? true : false,
+          '<=': v1 <= v2 ? true : false,
+          '||': v1 || v2 ? true : false,
+          '&&': v1 && v2 ? true : false
+        }
+        if (operators.hasOwnProperty(operator)) {
+          if (operators[operator]) {
+            return options.fn(this);
+          }
+          return options.inverse(this);
+        }
+        return console.error('Error: Expression "' + operator + '" not found');
+      }
+    }
+    
   })
 );
 app.set("view engine", "handlebars");
