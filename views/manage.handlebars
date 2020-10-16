@@ -1,4 +1,4 @@
-<div class="container center-align manage">
+<div class="container center-align manage padding">
     <div class="row">
         <div class="center-align">
             <h3>Choose a User to Manage Posts</h3>
@@ -9,7 +9,7 @@
             <!-- Dropdown Structure -->
             <ul id='dropdown1' class='dropdown-content'>
                 {{#each users}}
-                <li><a href="/manage/user/{{this.id}}">{{this.full_name}}</a></li>
+                <li><a class="deep-orange-text text-lighten-1" href="/manage/user/{{this.id}}">{{this.full_name}}</a></li>
                 {{/each}}
             </ul>
         </div>

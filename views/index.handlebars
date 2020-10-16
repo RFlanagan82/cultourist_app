@@ -1,4 +1,14 @@
 <div class="container center-align">
+    <br>
+    <div class="row">
+        <div class= "col s10 offset-s1 center-align">
+            <h5>CulTourist is the perfect resource to know local customs, slang and scams while abroad. </h5>
+            <h5>Get trusted advice from fellow travelers to blend in with the locals at your next destination!</h5>
+            <br>
+            <hr>
+        </div>
+    </div>
+    <br>
     <div class="row">
         <h2 class="center-align">Where do you want to go?</h2>
         <div class="center-align">
@@ -9,7 +19,7 @@
             <!-- Dropdown Structure -->
             <ul id='dropdown1' class='dropdown-content'>
                 {{#each countries}}
-                <li><a href="/country/{{this.name}}">{{this.name}}</a></li>
+                <li><a class="deep-orange-text text-lighten-1" href="/country/{{this.name}}">{{this.name}}</a></li>
                 {{/each}}
             </ul>
         </div>
