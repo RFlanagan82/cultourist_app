@@ -75,12 +75,11 @@ module.exports = (app) => {
     });
   });
 
-  app.put("/manage",(req,res) => {
+  app.put("/manage", (req, res) => {
     console.log(req.body);
   });
 
   app.get("/manage/user/:id", (req, res) => {
-    console.log("hello");
     db.Post.findAll({
       where: {
         UserId: req.params.id,
@@ -95,55 +94,63 @@ module.exports = (app) => {
   app.post("/api/create-user", (req, res) => {
     db.User.create({
       full_name: req.body.full_name,
-      numOfPosts: 0
+      numOfPosts: 0,
     }).then((results) => {
       res.json(results);
     });
   });
 
   app.post("/api/newpost", (req, res) => {
-    console.log("Hit this route")
+    console.log("Hit this route");
     console.log(req.body);
     db.User.findByPk(parseInt(req.body.UserId))
-    .then(user => {
-      console.log(user)
-      user.increment({numOfPosts: 1}, {where: {id: parseInt(req.body.UserId)
-      }}).then(() => {
-        db.Post.create({
-          title: req.body.title,
-          body: req.body.body,
-          category: req.body.category,
-          CountryId: req.body.CountryId,
-          UserId: user.id
-        }).then((results) => {
-          res.json(results);
-        })
-        .catch(err => console.log(err))
+      .then((user) => {
+        console.log(user);
+        user
+          .increment(
+            { numOfPosts: 1 },
+            { where: { id: parseInt(req.body.UserId) } }
+          )
+          .then(() => {
+            db.Post.create({
+              title: req.body.title,
+              body: req.body.body,
+              category: req.body.category,
+              CountryId: req.body.CountryId,
+              UserId: user.id,
+            })
+              .then((results) => {
+                res.json(results);
+              })
+              .catch((err) => console.log(err));
+          })
+          .catch((err) => console.log(err));
       })
-      .catch(err => console.log(err))
-    })
-    .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   });
 
   app.delete("/api/post/:id", (req, res) => {
     db.Post.findOne({
-      id:req.params.id
-    }).then(post => {
-      db.User.decrement(
-        ['numOfPosts', '1'],
-        {where: {id: post.UserId}}
-      ).then(() => {
-        db.Post.destroy({
-          where: {
-            id: req.params.id,
-          },
-        }).then(function (dbPost) {
-          res.json(dbPost);
-        })
-        .catch(err => console.log(err))
-      })
-      .catch(err => console.log(err))
+      where: {
+        id: req.params.id,
+      },
     })
-    .catch(err => console.log(err))
+      .then((post) => {
+        console.log(post);
+        db.User.decrement("numOfPosts", { by: 1, where: { id: post.UserId } })
+          .then(() => {
+            db.Post.destroy({
+              where: {
+                id: req.params.id,
+              },
+            })
+              .then(function (dbPost) {
+                res.json(dbPost);
+              })
+              .catch((err) => console.log(err));
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
   });
 };
