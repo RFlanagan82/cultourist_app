@@ -1,3 +1,5 @@
+//BRING IN SEQUELIZE FOR COUNTRIES TABLE AND ASSOCIATE POSTS TABLE================
+
 module.exports = function (sequelize, DataTypes) {
     const Country = sequelize.define("Country", {
       name: {
