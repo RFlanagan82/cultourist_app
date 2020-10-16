@@ -11,7 +11,8 @@ module.exports = (app) => {
   app.get("/", (req, res) => {
     db.Country.findAll().then((data) => {
       res.render("index", { countries: data });
-    });
+    })
+    .catch((err) => console.log(err));
   });
 
   app.get("/country/:name", (req, res) => {
@@ -50,9 +51,12 @@ module.exports = (app) => {
               population: population,
             };
             res.render("country", { countryData, post: postData });
-          });
-      });
-    });
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
   });
 
   app.get("/manage", (req, res) => {
@@ -60,7 +64,8 @@ module.exports = (app) => {
     db.User.findAll().then((data) => {
       res.render("manage", {
         users: data,
-      });
+      })
+      .catch((err) => console.log(err));
     });
   });
 
@@ -70,8 +75,10 @@ module.exports = (app) => {
         res.render("post", {
           countryList: countries,
           userNames: users,
-        });
-      });
+        })
+        .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
     });
   });
 
@@ -89,8 +96,10 @@ module.exports = (app) => {
         res.render("manage", {
           users: users,
           post: data,
-        });
-      });
+        })
+        .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
     });
   });
 
@@ -100,7 +109,8 @@ module.exports = (app) => {
       numOfPosts: 0,
     }).then((results) => {
       res.json(results);
-    });
+    })
+    .catch((err) => console.log(err));
   });
 
   app.post("/api/newpost", (req, res) => {
