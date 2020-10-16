@@ -23,7 +23,8 @@ $(document).ready(function () {
     }).then(function (results) {
       console.log(results);
       location.reload();
-    });
+    })
+    .catch((err) => console.log(err));
   });
 
   $("#post-id").on("submit", function (event) {
