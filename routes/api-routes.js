@@ -1,3 +1,4 @@
+//Dependencies ================================
 var express = require("express");
 const db = require("../models/");
 const app = express();
@@ -5,7 +6,9 @@ const models = require("../models/");
 const axios = require("axios");
 const { sequelize } = require("../models/");
 
-//API ROUTES
+//API ROUTES ==================================
+
+  //BRING IN ALL COUNTRIES DATA [READ]==============
 
 module.exports = (app) => {
   app.get("/", (req, res) => {
@@ -16,6 +19,7 @@ module.exports = (app) => {
       .catch((err) => console.log(err));
   });
 
+  //BRING IN SPECIFIC Country DATA [READ]=============
   app.get("/country/:name", (req, res) => {
     db.Country.findOne({
       where: { name: req.params.name },
@@ -63,6 +67,7 @@ module.exports = (app) => {
       .catch((err) => console.log(err));
   });
 
+  //BRING IN ALL USERS ON MANAGE PAGE [READ]==========
   app.get("/manage", (req, res) => {
     console.log(req.body);
     db.User.findAll().then((data) => {
@@ -74,6 +79,7 @@ module.exports = (app) => {
     });
   });
 
+  //READ ROUTE - BRING IN ALL USERS & ALL COUNTRIES FOR CREATE POST FORM=========
   app.get("/post", (req, res) => {
     db.User.findAll()
       .then((users) => {
@@ -89,6 +95,7 @@ module.exports = (app) => {
       .catch((err) => console.log(err));
   });
 
+  //READ ROUTE - BRING IN ALL POSTS BY USER ID ON MANAGE PAGE===============
   app.get("/manage/user/:id", (req, res) => {
     db.User.findAll()
       .then((users) => {
@@ -109,6 +116,7 @@ module.exports = (app) => {
       .catch((err) => console.log(err));
   });
 
+  //READ ROUTE - BRING IN SPECIFIC POSTS BY USER TO UPDATE===========
   app.get("/update/:id", (req, res) => {
     db.Post.findOne({
       where: {
@@ -124,6 +132,7 @@ module.exports = (app) => {
       .catch((err) => console.log(err));
   });
 
+  //UPDATE ROUTE - POST TITLE & BODY BY USER ID================
   app.put("/update/:id", (req, res) => {
     console.log(req.body);
     db.Post.update(
@@ -139,6 +148,7 @@ module.exports = (app) => {
     ).then((results) => res.json(results));
   });
 
+  //CREATE ROUTE - NEW USER=========================
   app.post("/api/create-user", (req, res) => {
     db.User.create({
       full_name: req.body.full_name,
@@ -150,6 +160,7 @@ module.exports = (app) => {
       .catch((err) => console.log(err));
   });
 
+  //CREATE ROUTE - NEW POST=====================
   app.post("/api/newpost", (req, res) => {
     console.log("Hit this route");
     console.log(req.body);
@@ -179,6 +190,7 @@ module.exports = (app) => {
       .catch((err) => console.log(err));
   });
 
+  //DELETE ROUTE - DELETE POST BY USER ID========
   app.delete("/api/post/:id", (req, res) => {
     db.Post.findOne({
       where: {

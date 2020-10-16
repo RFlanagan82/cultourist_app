@@ -1,6 +1,4 @@
--- FIRST RUN Countries and INSERTS
--- THEN RUN users and INSERTS
--- END with RUN Posts and INSERTS
+-- FIRST RUN Countries and INSERTS --
 
 INSERT INTO Countries (name,createdAt,updatedAt) VALUES ("France", NOW(), NOW());
 INSERT INTO Countries (name,createdAt,updatedAt) VALUES ("Italy", NOW(), NOW());
@@ -53,9 +51,13 @@ INSERT INTO Countries (name,createdAt,updatedAt) VALUES ("Ukraine", NOW(), NOW()
 INSERT INTO Countries (name,createdAt,updatedAt) VALUES ("United Kingdom", NOW(), NOW());
 INSERT INTO Countries (name,createdAt,updatedAt) VALUES ("Vatican City", NOW(), NOW());
 
+-- THEN RUN users and INSERTS --
+
 INSERT INTO users (full_name, numOfPosts,createdAt,updatedAt) VALUES ("Dane Walsh", 2, NOW(), NOW());
 INSERT INTO users (full_name, numOfPosts,createdAt,updatedAt) VALUES ("Batman Wayne", 3, NOW(), NOW());
 INSERT INTO users (full_name, numOfPosts,createdAt,updatedAt) VALUES ("Robin Grayson", 6, NOW(), NOW());
+
+-- END with RUN Posts and INSERTS --
 
 INSERT INTO Posts(title, body, category, createdAt, updatedAt, CountryId, UserId) VALUES("Don't Do this!", "Walking over people in any park is a big no-no.", "Taboos", NOW(), NOW(), 1, 1);
 INSERT INTO Posts(title, body, category, createdAt, updatedAt, CountryId, UserId) VALUES("Pictures at the Colloseum aren't free!", "The gladiator dressed men charge an arm and a leg for these pics", "Scams", NOW(), NOW(), 2, 1);
@@ -64,6 +66,8 @@ INSERT INTO Posts(title, body, category, createdAt, updatedAt, CountryId, UserId
 INSERT INTO Posts(title, body, category, createdAt, updatedAt, CountryId, UserId) VALUES("Ireland?!", "Locals pee on the blarney stone. Do not kiss.", "Culture", NOW(), NOW(), 3, 3);
 INSERT INTO Posts(title, body, category, createdAt, updatedAt, CountryId, UserId) VALUES("Italy Tower.", "The leaning tower is NOT made of pizza. Very dissapointing", "Scams", NOW(), NOW(), 2, 2);
 INSERT INTO Posts(title, body, category, createdAt, updatedAt, CountryId, UserId) VALUES("Belfast", "Game of Thrones was filmed here. Thats culture right?", "Culture", NOW(), NOW(), 3, 3);
+
+--Select All From Tables --
 
 SELECT * FROM culTourist_db.Users;
 SELECT * FROM culTourist_db.Countries;
