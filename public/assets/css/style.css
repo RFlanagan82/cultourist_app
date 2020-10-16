@@ -1,8 +1,25 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+.page-footer,
+.push {
+  height: 50px;
+}
+
 .page-footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  height: 4.5em; 
+  height: 50px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .brand-logo {
@@ -10,18 +27,13 @@
   margin-left: 10px;
 }
 
-.manage {
-  padding-top: 75px;
-  padding-bottom: 150px;
-}
-
-.post {
+.padding {
   padding-top: 75px;
   padding-bottom: 150px;
 }
 
 .copy-container {
-  padding: 2px 100px 0px 100px;
+  padding-bottom: 17px;
 }
 
 .cultourist {
@@ -71,9 +83,6 @@
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-  body, html {
-    height: 100%;
-}
 
 /* The hero image */
 .hero-image {
@@ -81,7 +90,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://health.hawaii.gov/travel/files/2020/06/TravelandHealthForm.jpg");
 
   /* Set a specific height */
-  height: 50%;
+  height: 400px;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
