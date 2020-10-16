@@ -2,9 +2,11 @@ module.exports = function (sequelize, DataTypes) {
     const User = sequelize.define("User", {
       full_name: {
         type: DataTypes.STRING,
+        required: true
       },
       numOfPosts: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        required: true
       },
     });
 

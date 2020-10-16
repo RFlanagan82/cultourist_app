@@ -1,8 +1,10 @@
 <div class="container center-align">
     <div class="row">
-        <div class="col s4 offset-s4">
+        <div class="center-align">
+            <h3>Choose a User to Manage Posts</h3>
             <!-- Dropdown Trigger -->
-            <a class='dropdown-trigger btn btn-large blue darken-4' href='#' data-target='dropdown1'>Select your name!</a>
+            <a class='dropdown-trigger btn btn-large blue darken-4' href='#' data-target='dropdown1'>Select your
+                name!</a>
 
             <!-- Dropdown Structure -->
             <ul id='dropdown1' class='dropdown-content'>
@@ -16,24 +18,22 @@
 
     <!--This Div will contain the dynamically populated Post Cards-->
     {{#each post}}
-        <div class="row">
-            <div class="col s12">
-                <div class="card light-grey darken-1">
-                    <div class="card-content">
-                        <h5>{{title}}</h5>
-                        <p>{{createdAt}}</p>
-                        <p>{{category}}</p>
-                        <p>{{body}}</p>
-                    </div>
-                    <div class="card-action">
-                    <a class="btn waves-effect waves-light blue darken-4" id="updateBtn">Update</a>
+    <div class="row">
+        <div class="col s12">
+            <div class="card light-grey darken-1">
+                <div class="card-content">
+                    <h5>{{title}}</h5>
+                    <p>{{createdAt}}</p>
+                    <p>{{category}}</p>
+                    <p>{{body}}</p>
+                </div>
+                <div class="card-action">
+                    <a class="btn waves-effect waves-light blue darken-4" href="/update/{{id}}">Update</a>
                     <a class="btn waves-effect waves-light blue darken-4" data-id="{{id}}" id="deleteBtn">Delete</a>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     {{/each}}
 </div>
 <script src="/assets/index.js"></script>
-
-
