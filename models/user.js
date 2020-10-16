@@ -1,3 +1,5 @@
+//BRING IN SEQUELIZE FOR USER TABLE AND ASSOCIATE POSTS TABLE================
+
 module.exports = function (sequelize, DataTypes) {
     const User = sequelize.define("User", {
       full_name: {
