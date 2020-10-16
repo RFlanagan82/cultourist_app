@@ -2,13 +2,8 @@ html,
 body {
   height: 100%;
   margin: 0;
-}
-
-
-body {
   background-color: linen;
 }
-
 
 .wrapper {
   min-height: 100%;
@@ -93,4 +88,14 @@ body {
 
 ul.dropdown-content.select-dropdown li:not(.disabled) span {
   color: #f4511e;
+}
+
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+  color: #f4511e !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #f4511e !important;
+  box-shadow: 0 1px 0 0 #f4511e !important;
 }

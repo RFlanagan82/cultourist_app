@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  // initializers for materialize dropdowns and selects
   $(".dropdown-trigger").dropdown();
   $("select").formSelect();
 
@@ -17,11 +18,10 @@ $(document).ready(function () {
     }
   });
 
+  // event listener for delete post button
   $(".deleteBtn").on("click", function (event) {
     event.preventDefault();
-    //console.log("clicked me", this)
     let id = $(this).attr("data-id");
-    //console.log($(this).parent());
     $.ajax({
       method: "DELETE",
       url: "/api/post/" + id,
@@ -33,6 +33,7 @@ $(document).ready(function () {
       .catch((err) => console.log(err));
   });
 
+  // event listener for submit of the update post form
   $("#postUpdate").on("submit", function (event) {
     event.preventDefault();
     let id = $("#updateSubmitBtn").attr("data-id");
@@ -40,6 +41,7 @@ $(document).ready(function () {
     let title = $("#title").val();
     let body = $("#body").val();
 
+    // VALIDATION
     if (title === "") {
       $("#updateTitleError").text("Title cannot be blank.");
     }
@@ -63,6 +65,7 @@ $(document).ready(function () {
     }
   });
 
+  // event listener for submit of new post form
   $("#newPost").on("submit", function (event) {
     event.preventDefault();
     $("#userError").text("");
@@ -70,16 +73,14 @@ $(document).ready(function () {
     $("#categoryError").text("");
     $("#titleError").text("");
     $("#bodyError").text("");
-    // console.log(this);
-    // console.log($("#category option:selected").text());
 
     const category = $("#category option:selected").text();
     const name = $("#name option:selected").val();
     const country = $("#country option:selected").val();
     const title = $("#title").val();
     const insight = $("#body").val();
-    console.log(category);
 
+    // VALIDATION
     if (name === "") {
       $("#userError").text("You must a pick user.");
     }
@@ -102,7 +103,6 @@ $(document).ready(function () {
         CountryId: country,
         UserId: name,
       };
-      console.log(newPost);
       $.post("/api/newpost", newPost).then(function (results) {
         console.log(results);
         location.reload();
