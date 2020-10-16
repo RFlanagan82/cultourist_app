@@ -1,7 +1,9 @@
+//JAVASCRIPT FOR APP IN DOCUMENT.READY
 $(document).ready(function () {
   $(".dropdown-trigger").dropdown();
   $("select").formSelect();
 
+  //EVENT LISTENER FOR NEW USER FORM SUBMISSION & POST ROUTE
   $("#newUserForm").on("submit", (event) => {
     event.preventDefault();
     const newName = { full_name: $("#newUser").val() };
@@ -12,6 +14,7 @@ $(document).ready(function () {
     });
   });
 
+  //EVENT LISTENER FOR DELETE POST ON CLICK & DELETE ROUTE
   $(".deleteBtn").on("click", function (event) {
     event.preventDefault();
     //console.log("clicked me", this)
@@ -28,6 +31,7 @@ $(document).ready(function () {
       .catch((err) => console.log(err));
   });
 
+ //EVENT LISTENER FOR SUBMIT BUTTON ON UPDATE POST BUTTON CLICK
   $("#submitBtn").on("click", function (event) {
     event.preventDefault();
     let id = $(this).attr("data-id");
@@ -47,7 +51,8 @@ $(document).ready(function () {
       })
       .catch((err) => console.log(err));
   });
-
+ 
+  //EVENT LISTENER FOR NEW POST SUBMISSION- CREATE ROUTE
   $("#post-id").on("submit", function (event) {
     event.preventDefault();
     // console.log(this);
