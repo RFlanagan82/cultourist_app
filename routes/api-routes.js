@@ -24,6 +24,7 @@ module.exports = (app) => {
         db.Post.findAll({
           include: db.User,
           where: { CountryId: id },
+          order: [[{model: db.User}, "numOfPosts", "DESC"]]
         })
           .then((postData) => {
             let capital = "";
@@ -114,11 +115,13 @@ module.exports = (app) => {
         id: req.params.id,
       },
       include: [db.User, db.Country],
-    }).then((post) => {
-      res.render("update", {
-        post: post,
-      });
-    });
+    })
+      .then((post) => {
+        res.render("update", {
+          post: post,
+        });
+      })
+      .catch((err) => console.log(err));
   });
 
   app.put("/update/:id", (req, res) => {
