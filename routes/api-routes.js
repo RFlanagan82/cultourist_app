@@ -80,13 +80,16 @@ module.exports = (app) => {
   });
 
   app.get("/manage/user/:id", (req, res) => {
-    db.Post.findAll({
-      where: {
-        UserId: req.params.id,
-      },
-    }).then((data) => {
-      res.render("manage", {
-        post: data,
+    db.User.findAll().then((users) => {
+      db.Post.findAll({
+        where: {
+          UserId: req.params.id,
+        },
+      }).then((data) => {
+        res.render("manage", {
+          users: users,
+          post: data,
+        });
       });
     });
   });
