@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
   });
 
-  $("#deleteBtn").on("click", function (event) {
+  $(".deleteBtn").on("click", function (event) {
     event.preventDefault();
     //console.log("clicked me", this)
     let id = $(this).attr("data-id");
