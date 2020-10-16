@@ -8,7 +8,7 @@ $(document).ready(function () {
     console.log("submitted");
     $.post("/api/create-user", newName).then((data) => {
       console.log(data);
-      //location.reload();
+      location.reload();
     });
   });
 
