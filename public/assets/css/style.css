@@ -10,6 +10,11 @@
   margin-left: 10px;
 }
 
+.manage {
+  padding-top: 75px;
+  padding-bottom: 150px;
+}
+
 .copy-container {
   padding: 2px 100px 0px 100px;
 }
