@@ -15,17 +15,49 @@
         </div>
     </div>
 
+    
+    
+
 
     <!--This Div will contain the dynamically populated Post Cards-->
     {{#each post}}
+    
+
     <div class="row">
         <div class="col s12">
             <div class="card light-grey darken-1">
+                
                 <div class="card-content">
-                    <h5>{{title}}</h5>
-                    <p>{{createdAt}}</p>
-                    <p>{{category}}</p>
+                    <div class="row">
+        <div class="col s6">
+            <h4>{{User.full_name}}</h4>
+        </div>
+        <div class="col s3 offset-s3">
+            {{#compare post.User.numOfPosts '<' 5}}
+            <img src="/assets/images/turtle.png" alt="Turle Badge"
+            height="100" width="100">
+            {{else}}
+                {{#compare User.numOfPosts '<' 10}}
+                    <img src="/assets/images/moose.png" alt="Moose Badge"
+                    height="100" width="100">
+                        {{else}}
+                        {{#compare User.numOfPosts '<' 25}}
+                            <img src="/assets/images/muffin.png" alt="Muffin Badge"
+                            height="100" width="100">
+                            {{else}}
+                                {{#compare User.numOfPosts '>=' 25}}
+                                    <img src="/assets/images/saddle.png" alt="Saddle Badge"
+                                    height="100" width="100">
+                            {{/compare}}
+                        {{/compare}}
+                {{/compare}}
+            {{/compare}}
+        </div>
+    </div>
+                    <h4>{{Country.name}}</h4>
+                    <h5>{{category}}: {{title}}</h5>
                     <p>{{body}}</p>
+                    <p style="font-size:10px;">Post created at: {{createdAt}}</p>
                 </div>
                 <div class="card-action">
                     <a class="btn waves-effect waves-light blue darken-4" href="/update/{{id}}">Update</a>
