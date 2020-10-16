@@ -1,8 +1,10 @@
+//JAVASCRIPT FOR APP IN DOCUMENT.READY
 $(document).ready(function () {
   // initializers for materialize dropdowns and selects
   $(".dropdown-trigger").dropdown();
   $("select").formSelect();
 
+  //EVENT LISTENER FOR NEW USER FORM SUBMISSION & POST ROUTE
   $("#newUserForm").on("submit", (event) => {
     event.preventDefault();
     const newUser = $("#newUser").val();
@@ -18,7 +20,7 @@ $(document).ready(function () {
     }
   });
 
-  // event listener for delete post button
+  //EVENT LISTENER FOR DELETE POST ON CLICK & DELETE ROUTE
   $(".deleteBtn").on("click", function (event) {
     event.preventDefault();
     let id = $(this).attr("data-id");
@@ -33,8 +35,8 @@ $(document).ready(function () {
       .catch((err) => console.log(err));
   });
 
-  // event listener for submit of the update post form
-  $("#postUpdate").on("submit", function (event) {
+ //EVENT LISTENER FOR SUBMIT BUTTON ON UPDATE POST BUTTON CLICK
+  $("#submitBtn").on("click", function (event) {
     event.preventDefault();
     let id = $("#updateSubmitBtn").attr("data-id");
     let userId = $("#updateSubmitBtn").attr("data-user");
@@ -64,9 +66,9 @@ $(document).ready(function () {
         .catch((err) => console.log(err));
     }
   });
-
-  // event listener for submit of new post form
-  $("#newPost").on("submit", function (event) {
+ 
+  //EVENT LISTENER FOR NEW POST SUBMISSION- CREATE ROUTE
+  $("#post-id").on("submit", function (event) {
     event.preventDefault();
     $("#userError").text("");
     $("#countryError").text("");
