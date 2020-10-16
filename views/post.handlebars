@@ -1,11 +1,11 @@
 <div class="container center-align post">
     <div class="row">
         <form class="col s12" id="newUserForm">
-            <h2>New Here? Create a Posting Profile!</h2>
+            <h3>New Here? Create a Posting Profile!</h3>
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="New User Name" id="newUser" type="text" class="validate">
-                    <label for="newUser">Enter your new user name:</label>
+                    <input placeholder="User Name" id="newUser" type="text" class="validate">
+                    
                 </div>
                 <button class="btn waves-effect waves-light blue darken-4" id="newUserSubmit" type="submit">Create New
                     User
@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <form class="col s12" id="post-id">
-            <h2>Create New Post</h2>
+            <h3>Create New Post</h3>
             <div class="row">
                 <div class="input-field col s12">
                     <select id="name">
@@ -24,7 +24,7 @@
                         <option value="{{this.id}}">{{this.full_name}}</option>
                         {{/each}}
                     </select>
-                    <label>Choose a User Name</label>
+                    
                 </div>
                 <div class="input-field col s12">
                     <select id="country">
@@ -33,7 +33,7 @@
                         <option value="{{this.id}}">{{this.name}}</option>
                         {{/each}}
                     </select>
-                    <label>Choose a Country</label>
+                    
                 </div>
                 <div class="input-field col s12">
                     <select id="category">
@@ -43,15 +43,15 @@
                         <option value="Taboos">Taboos</option>
                         <option value="Scam">Scam</option>
                     </select>
-                    <label>Choose a Category</label>
+                    
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Post Title" id="title" type="text" class="validate">
-                    <label for="title">Title</label>
+                    
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Enter your insight." id="body" type="text" class="validate">
-                    <label for="body">Travel Insight</label>
+                    <input placeholder="Enter your travel insight." id="body" type="text" class="validate">
+                    
                 </div>
                 <button class="btn waves-effect waves-light blue darken-4" type="submit">Post
                 </button>
