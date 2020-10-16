@@ -24,7 +24,7 @@ module.exports = (app) => {
         db.Post.findAll({
           include: db.User,
           where: { CountryId: id },
-          order: [[{model: db.User}, "numOfPosts", "DESC"]]
+          order: [[{ model: db.User }, "numOfPosts", "DESC"]],
         })
           .then((postData) => {
             let capital = "";
@@ -75,38 +75,38 @@ module.exports = (app) => {
   });
 
   app.get("/post", (req, res) => {
-    db.User.findAll().then((users) => {
-      db.Country.findAll()
-        .then((countries) => {
-          res
-            .render("post", {
+    db.User.findAll()
+      .then((users) => {
+        db.Country.findAll()
+          .then((countries) => {
+            res.render("post", {
               countryList: countries,
               userNames: users,
-            })
-            .catch((err) => console.log(err));
-        })
-        .catch((err) => console.log(err));
-    });
+            });
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
   });
 
   app.get("/manage/user/:id", (req, res) => {
-    db.User.findAll().then((users) => {
-      db.Post.findAll({
-        include: [db.User, db.Country],
-        where: {
-          UserId: req.params.id,
-        },
-      })
-        .then((data) => {
-          res
-            .render("manage", {
+    db.User.findAll()
+      .then((users) => {
+        db.Post.findAll({
+          include: [db.User, db.Country],
+          where: {
+            UserId: req.params.id,
+          },
+        })
+          .then((data) => {
+            res.render("manage", {
               users: users,
               post: data,
-            })
-            .catch((err) => console.log(err));
-        })
-        .catch((err) => console.log(err));
-    });
+            });
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
   });
 
   app.get("/update/:id", (req, res) => {
