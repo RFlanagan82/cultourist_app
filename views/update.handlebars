@@ -1,7 +1,7 @@
 <!--HANDLEBARS CONTAINER FOR UPDATING POST DB CARDS-->
 <div class="container center-align padding">
     <div class="row">
-        <form class="col s12" id="post-update">
+        <form class="col s12" id="postUpdate">
             <div class="row">
                 <h3>Hi {{post.User.full_name}}!</h3>
                 <h4>Update Your Post Details</h4>
@@ -10,12 +10,14 @@
                 <div class="input-field col s12">
                     <input value="{{post.title}}" id="title" type="text" class="validate">
                     <label for="title">Title</label>
+                    <p class="red-text left" id="updateTitleError"></p>
                 </div>
                 <div class="input-field col s12">
                     <input value="{{post.body}}" id="body" type="text" class="validate">
                     <label for="body">Travel Insight</label>
+                    <p class="red-text left" id="updateBodyError"></p>
                 </div>
-                <button class="btn waves-effect waves-light blue darken-4" id="submitBtn" data-user="{{post.UserId}}"
+                <button class="btn waves-effect waves-light blue darken-4" id="updateSubmitBtn" data-user="{{post.UserId}}"
                     data-id="{{post.id}}" type="submit">Update Post
                 </button>
             </div>

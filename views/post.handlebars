@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="User Name" id="newUser" type="text" class="validate">
-                    
+                    <p class="red-text left" id="newUserError"></p>
                 </div>
                 <button class="btn waves-effect waves-light blue darken-4" id="newUserSubmit" type="submit">Create New
                     User
@@ -15,7 +15,7 @@
         </form>
     </div>
     <div class="row">
-        <form class="col s12" id="post-id">
+        <form class="col s12" id="newPost">
             <h3>Create New Post</h3>
             <div class="row">
                 <div class="input-field col s12">
@@ -25,7 +25,7 @@
                         <option value="{{this.id}}">{{this.full_name}}</option>
                         {{/each}}
                     </select>
-                    
+                    <p class="red-text left" id="userError"></p>
                 </div>
                 <div class="input-field col s12">
                     <select id="country">
@@ -34,7 +34,7 @@
                         <option value="{{this.id}}">{{this.name}}</option>
                         {{/each}}
                     </select>
-                    
+                    <p class="red-text left" id="countryError"></p>
                 </div>
                 <div class="input-field col s12">
                     <select id="category">
@@ -44,15 +44,15 @@
                         <option value="Taboos">Taboos</option>
                         <option value="Scam">Scam</option>
                     </select>
-                    
+                    <p class="red-text left" id="categoryError"></p>
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Post Title" id="title" type="text" class="validate">
-                    
+                    <p class="red-text left" id="titleError"></p>
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Enter your travel insight." id="body" type="text" class="validate">
-                    
+                    <p class="red-text left" id="bodyError"></p>
                 </div>
                 <button class="btn waves-effect waves-light blue darken-4" type="submit">Post
                 </button>
