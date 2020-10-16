@@ -91,6 +91,7 @@ module.exports = (app) => {
   app.get("/manage/user/:id", (req, res) => {
     db.User.findAll().then((users) => {
       db.Post.findAll({
+        include: [db.User, db.Country],
         where: {
           UserId: req.params.id,
         },
