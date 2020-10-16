@@ -3,6 +3,13 @@ body {
   height: 100%;
   margin: 0;
 }
+
+
+body {
+  background-color: linen;
+}
+
+
 .wrapper {
   min-height: 100%;
 
@@ -31,6 +38,10 @@ body {
 .padding {
   padding-top: 75px;
   padding-bottom: 150px;
+}
+
+.index {
+  padding-bottom: 100px;
 }
 
 .copy-container {
