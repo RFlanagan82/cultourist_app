@@ -2,12 +2,21 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  
+  height: 4.5em; 
 }
 
 .brand-logo {
   margin-top: 5px;
   margin-left: 10px;
+}
+
+.manage {
+  padding-top: 75px;
+  padding-bottom: 150px;
+}
+
+.copy-container {
+  padding: 2px 100px 0px 100px;
 }
 
 .cultourist {
