@@ -74,9 +74,8 @@ module.exports = (app) => {
       .then((data) => {
         res.render("manage", {
           users: data,
-        });
-      })
-      .catch((err) => console.log(err));
+        })
+    }).catch((err) => console.log(err));
   });
 
   //READ ROUTE - BRING IN ALL USERS & ALL COUNTRIES FOR CREATE POST FORM=========
