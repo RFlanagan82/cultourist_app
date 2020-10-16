@@ -1,13 +1,9 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
-}
-
-
-body {
   background-color: linen;
 }
-
 
 .wrapper {
   min-height: 100%;
@@ -23,7 +19,7 @@ body {
 
 .page-footer {
   width: 100%;
-  height: 50px; 
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,53 +48,11 @@ body {
   margin-left: 50px;
 }
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://health.hawaii.gov/travel/files/2020/06/TravelandHealthForm.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://health.hawaii.gov/travel/files/2020/06/TravelandHealthForm.jpg");
 
   /* Set a specific height */
   height: 400px;
@@ -116,7 +70,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-};
+}
 
 @media only screen and (min-width: 501px) {
   #logo {
@@ -130,4 +84,18 @@ body {
     max-height: 100%;
     max-width: 100%;
   }
+}
+
+ul.dropdown-content.select-dropdown li:not(.disabled) span {
+  color: #f4511e;
+}
+
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+  color: #f4511e !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #f4511e !important;
+  box-shadow: 0 1px 0 0 #f4511e !important;
 }
