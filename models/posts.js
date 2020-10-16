@@ -1,3 +1,5 @@
+//BRING IN SEQUELIZE FOR POSTS TABLE AND ASSOCIATE COUNTRIES & USERS TABLE================
+
 module.exports = function (sequelize, DataTypes) {
     const Post = sequelize.define("Post", {
       title: {
