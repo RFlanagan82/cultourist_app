@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "passwordb1rd",
+    "password": "Alucard1",
     "database": "culTourist_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
