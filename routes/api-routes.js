@@ -8,7 +8,7 @@ const { sequelize } = require("../models/");
 
 //API ROUTES ==================================
 
-  //BRING IN ALL COUNTRIES DATA [READ]==============
+//BRING IN ALL COUNTRIES DATA [READ]==============
 
 module.exports = (app) => {
   app.get("/", (req, res) => {
@@ -70,9 +70,9 @@ module.exports = (app) => {
   //BRING IN ALL USERS ON MANAGE PAGE [READ]==========
   app.get("/manage", (req, res) => {
     console.log(req.body);
-    db.User.findAll().then((data) => {
-      res
-        .render("manage", {
+    db.User.findAll()
+      .then((data) => {
+        res.render("manage", {
           users: data,
         })
     }).catch((err) => console.log(err));

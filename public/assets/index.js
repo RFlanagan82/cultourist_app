@@ -36,7 +36,7 @@ $(document).ready(function () {
   });
 
  //EVENT LISTENER FOR SUBMIT BUTTON ON UPDATE POST BUTTON CLICK
-  $("#submitBtn").on("click", function (event) {
+ $("#postUpdate").on("submit", function (event) {
     event.preventDefault();
     let id = $("#updateSubmitBtn").attr("data-id");
     let userId = $("#updateSubmitBtn").attr("data-user");
