@@ -70,6 +70,7 @@ $(document).ready(function () {
   //EVENT LISTENER FOR NEW POST SUBMISSION- CREATE ROUTE
   $("#post-id").on("submit", function (event) {
     event.preventDefault();
+    console.log("ttsetste")
     $("#userError").text("");
     $("#countryError").text("");
     $("#categoryError").text("");
