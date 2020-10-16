@@ -33,7 +33,7 @@
             <h4>{{User.full_name}}</h4>
         </div>
         <div class="col s3 offset-s3">
-            {{#compare post.User.numOfPosts '<' 5}}
+            {{#compare User.numOfPosts '<' 5}}
             <img src="/assets/images/turtle.png" alt="Turle Badge"
             height="100" width="100">
             {{else}}
