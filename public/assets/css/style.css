@@ -5,11 +5,6 @@ body {
   background-color: linen;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 5e385e10f410a16d32e8ef5b6c3a4e2e46839e31
 .wrapper {
   min-height: 100%;
 
@@ -56,8 +51,7 @@ body {
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://health.hawaii.gov/travel/files/2020/06/TravelandHealthForm.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
   /* Set a specific height */
   height: 400px;
@@ -67,6 +61,26 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+.index-hero {
+  background-image: url("/assets/images/hero/index.jpg");
+}
+
+.country-hero {
+  background-image: url("/assets/images/hero/country.jpg");
+}
+
+.post-hero {
+  background-image: url("/assets/images/hero/post.jpg");
+}
+
+.manage-hero {
+  background-image: url("/assets/images/hero/manage.jpg");
+}
+
+.update-hero {
+  background-image: url("/assets/images/hero/update.jpg");
 }
 
 /* Place text in the middle of the image */
@@ -95,12 +109,12 @@ ul.dropdown-content.select-dropdown li:not(.disabled) span {
   color: #f4511e;
 }
 
- /* label focus color */
- .input-field input[type=text]:focus + label {
+/* label focus color */
+.input-field input[type="text"]:focus + label {
   color: #f4511e !important;
 }
 /* label underline focus color */
-.input-field input[type=text]:focus {
+.input-field input[type="text"]:focus {
   border-bottom: 1px solid #f4511e !important;
   box-shadow: 0 1px 0 0 #f4511e !important;
 }
