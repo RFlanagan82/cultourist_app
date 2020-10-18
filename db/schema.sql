@@ -8,7 +8,7 @@ USE culTourist_db;
 --Creates our user table --
 CREATE TABLE users(
 id INTEGER NOT NULL AUTO_INCREMENT,
-full_name VARCHAR(30) NOT NULL,
+full_name VARCHAR(50) NOT NULL,
 numOfPosts INT NOT NULL,
 PRIMARY KEY (id)
 );
@@ -16,7 +16,7 @@ PRIMARY KEY (id)
 --Creates our countries table --
 CREATE TABLE countries(
 id INTEGER NOT NULL AUTO_INCREMENT,
-name VARCHAR(30) NOT NULL,
+name VARCHAR(50) NOT NULL,
 PRIMARY KEY (id)
 );
 
@@ -25,7 +25,7 @@ CREATE TABLE posts(
 id INTEGER NOT NULL AUTO_INCREMENT,
 countryID INT NOT NULL,
 userID INT NOT NULL,
-title VARCHAR(30) NOT NULL,
+title VARCHAR(150) NOT NULL,
 body VARCHAR(255) NOT NULL,
 category VARCHAR(30) NOT NULL,
 PRIMARY KEY (id)
