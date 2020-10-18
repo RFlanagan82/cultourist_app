@@ -34,23 +34,23 @@
                 <div class="card-content">
                     <div class="row">
         <div class="col s6">
-            <h4>{{User.full_name}}</h4>
+            <h4 class="center">{{User.full_name}}</h4>
         </div>
-        <div class="col s3 offset-s3">
+        <div class="col s6">
             {{#compare User.numOfPosts '<' 5}}
-            <img src="/assets/images/turtle.png" alt="Turle Badge"
+            <img class="center" src="/assets/images/turtle.png" alt="Turle Badge"
             height="100" width="100">
             {{else}}
                 {{#compare User.numOfPosts '<' 10}}
-                    <img src="/assets/images/moose.png" alt="Moose Badge"
+                    <img class="center" src="/assets/images/moose.png" alt="Moose Badge"
                     height="100" width="100">
                         {{else}}
                         {{#compare User.numOfPosts '<' 25}}
-                            <img src="/assets/images/muffin.png" alt="Muffin Badge"
+                            <img class="center" src="/assets/images/muffin.png" alt="Muffin Badge"
                             height="100" width="100">
                             {{else}}
                                 {{#compare User.numOfPosts '>=' 25}}
-                                    <img src="/assets/images/saddle.png" alt="Saddle Badge"
+                                    <img class="center" src="/assets/images/saddle.png" alt="Saddle Badge"
                                     height="100" width="100">
                             {{/compare}}
                         {{/compare}}
