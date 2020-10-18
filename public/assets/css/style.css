@@ -118,3 +118,7 @@ ul.dropdown-content.select-dropdown li:not(.disabled) span {
   border-bottom: 1px solid #f4511e !important;
   box-shadow: 0 1px 0 0 #f4511e !important;
 }
+
+.badge-card {
+  padding: 10px;
+}
