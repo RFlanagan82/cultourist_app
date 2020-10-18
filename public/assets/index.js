@@ -108,7 +108,7 @@ $(document).ready(function () {
       };
       $.post("/api/newpost", newPost).then(function (results) {
         console.log(results);
-        location.reload();
+        location.replace("/manage/user/" + newPost.UserId);
       });
     }
   });
