@@ -73,6 +73,13 @@ We experienced a few challenges along the way and they were instrumental in help
 ## Badges
 ![](https://img.shields.io/badge/RFlanagan82-Do%20it%20for%20the%20users-green)
 
+## Contact
+
+* Ryan Flanagan - ![](https://www.linkedin.com/in/ryanflanagan82/)
+* Aimee Esler - ![](https://www.linkedin.com/in/aimee-esler-3bb31288/)
+* Aubrey Polk - ![](https://www.linkedin.com/in/aubrey-polk-70886456/)
+* Dane Walsh - ![](https://www.linkedin.com/in/thomasdwj/)
+
 ## License
 
 Copyright 2020 - 
