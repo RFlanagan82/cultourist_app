@@ -35,8 +35,8 @@ $(document).ready(function () {
       .catch((err) => console.log(err));
   });
 
- //EVENT LISTENER FOR SUBMIT BUTTON ON UPDATE POST BUTTON CLICK
- $("#postUpdate").on("submit", function (event) {
+  //EVENT LISTENER FOR SUBMIT BUTTON ON UPDATE POST BUTTON CLICK
+  $("#postUpdate").on("submit", function (event) {
     event.preventDefault();
     let id = $("#updateSubmitBtn").attr("data-id");
     let userId = $("#updateSubmitBtn").attr("data-user");
@@ -66,11 +66,11 @@ $(document).ready(function () {
         .catch((err) => console.log(err));
     }
   });
- 
+
   //EVENT LISTENER FOR NEW POST SUBMISSION- CREATE ROUTE
   $("#post-id").on("submit", function (event) {
     event.preventDefault();
-    console.log("ttsetste")
+    console.log("ttsetste");
     $("#userError").text("");
     $("#countryError").text("");
     $("#categoryError").text("");
@@ -98,7 +98,14 @@ $(document).ready(function () {
     }
     if (insight === "") {
       $("#bodyError").text("Insight cannot be blank.");
-    } else {
+    }
+    if (
+      name !== "" &&
+      country !== "" &&
+      category !== "Choose a Category" &&
+      title !== "" &&
+      insight !== ""
+    ) {
       const newPost = {
         title: title,
         body: insight,
