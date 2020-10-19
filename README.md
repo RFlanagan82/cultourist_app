@@ -75,10 +75,12 @@ We experienced a few challenges along the way and they were instrumental in help
 
 ## Contact
 
-* Ryan Flanagan - ![](https://www.linkedin.com/in/ryanflanagan82/)
-* Aimee Esler - ![](https://www.linkedin.com/in/aimee-esler-3bb31288/)
-* Aubrey Polk - ![](https://www.linkedin.com/in/aubrey-polk-70886456/)
-* Dane Walsh - ![](https://www.linkedin.com/in/thomasdwj/)
+Click the links below to find us on LinkedIn.
+
+* [Ryan Flanagan](https://www.linkedin.com/in/ryanflanagan82/)
+* [Aimee Esler](https://www.linkedin.com/in/aimee-esler-3bb31288/)
+* [Aubrey Polk](https://www.linkedin.com/in/aubrey-polk-70886456/)
+* [Dane Walsh](https://www.linkedin.com/in/thomasdwj/)
 
 ## License
 
